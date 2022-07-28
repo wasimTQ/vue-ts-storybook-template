@@ -4,6 +4,7 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import viteImg from '@/assets/vite.svg'
 import vueImg from '@/assets/vue.svg'
+import {RouterView} from "vue-router";
 </script>
 
 <template>
@@ -15,7 +16,7 @@ import vueImg from '@/assets/vue.svg'
       <img :src="vueImg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <RouterView :key="$route.path"></RouterView>
 </template>
 
 <style scoped>
