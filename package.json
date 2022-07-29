@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
+    "storybook:up": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "test:storybook": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
+    "code:test:storybook": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && test-storybook\""
   },
   "dependencies": {
+    "babel-loader": "8.1.0",
+    "concurrently": "^7.3.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
@@ -25,12 +27,14 @@
     "@storybook/test-runner": "^0.5.0",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue3": "^6.5.9",
-    "@vitejs/plugin-vue": "^3.0.0",
-    "babel-loader": "^8.2.5",
+    "@types/node": "^18.6.2",
+    "@vitejs/plugin-vue": "^3.0.1",
     "jest": "27",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^0.38.4"
+    "pinia": "^2.0.17",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.3",
+    "vue-loader": "^17.0.0",
+    "vue-router": "^4.1.3",
+    "vue-tsc": "^0.39.2"
   }
 }
